@@ -64,9 +64,105 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-simplify-block" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-type_cast " class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/06/01/simplify-block/" class="article-date">
+    <a href="/2020/06/12/type_cast%20/" class="article-date">
+  <time datetime="2020-06-12T08:30:51.469Z" itemprop="datePublished">2020-06-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/12/type_cast%20/">type_cast </a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="JS类型转换"><a href="#JS类型转换" class="headerlink" title="JS类型转换"></a>JS类型转换</h2><h4 id="1-数组转字符串-join-连接符"><a href="#1-数组转字符串-join-连接符" class="headerlink" title="1.数组转字符串 join()连接符"></a>1.数组转字符串 join()连接符</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>];</span><br><span class="line">arr.join(<span class="string">","</span>);</span><br><span class="line">console.log(arr) //结果为“a,b,c”</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-字符串转数组-split-切割符"><a href="#2-字符串转数组-split-切割符" class="headerlink" title="2.字符串转数组 split()切割符"></a>2.字符串转数组 split()切割符</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = <span class="string">"a,b,c"</span>;</span><br><span class="line">arr.split(<span class="string">","</span>);</span><br><span class="line">console.log(arr) //结果为[<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>];</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-数组转json"><a href="#3-数组转json" class="headerlink" title="3.数组转json"></a>3.数组转json</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1,2,3, &#123; a : 1 &#125; ];</span><br><span class="line">var sum=JSON.stringify( arr );</span><br><span class="line">console.log(sum); //结果为<span class="string">'[1,2,3,&#123;"a":1&#125;]'</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-json转数组"><a href="#4-json转数组" class="headerlink" title="4.json转数组"></a>4.json转数组</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var jsonStr = <span class="string">'[1,2,3,&#123;"a":1&#125;]'</span>;</span><br><span class="line">var sum = JSON.parse( jsonStr );</span><br><span class="line">console.log(sum); //结果为[1,2,3, &#123; a : 1 &#125; ];</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-对象转数组"><a href="#5-对象转数组" class="headerlink" title="5.对象转数组"></a>5.对象转数组</h4><ul>
+<li>方法一 Object.values()</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123; <span class="string">'0'</span> : <span class="string">"a"</span>, <span class="string">'1'</span> : <span class="string">"b"</span>, <span class="string">'2'</span> : <span class="string">"c"</span>&#125;;</span><br><span class="line">var arr = Object.values(obj);</span><br><span class="line">console.log(arr); //结果为[ <span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>];</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>方法二 for in遍历</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123; <span class="string">'0'</span> : <span class="string">"a"</span>, <span class="string">'1'</span> : <span class="string">"b"</span>, <span class="string">'2'</span> : <span class="string">"c"</span>&#125;;</span><br><span class="line">var arr = [];</span><br><span class="line"><span class="keyword">for</span>(var i <span class="keyword">in</span> obj)&#123; arr.push(obj[i])&#125;;</span><br><span class="line">console.log(arr); //结果为[ <span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>];</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="6-数组转对象，键值对形式"><a href="#6-数组转对象，键值对形式" class="headerlink" title="6.数组转对象，键值对形式"></a>6.数组转对象，键值对形式</h4><ul>
+<li>方法一  Object.assign()</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object.assign(&#123;&#125;,[1,2,3]); //结果为&#123; 0 : 1, 1 : 2, 2 : 3 &#125;;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>方法二 ES6的语法糖 {…}</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;...[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>]&#125;</span><br><span class="line">console.log(&#123;...[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>]&#125;); //结果为&#123; 0 : <span class="string">"a"</span>, 1 : <span class="string">"b"</span>, 2 : <span class="string">"c"</span>&#125;;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>方法三 forEach循环</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arr= [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</span><br><span class="line">var obj = &#123;&#125;;</span><br><span class="line">arr.forEach((item,index)=&gt;&#123; obj[index] = item &#125;);</span><br><span class="line">console.log(obj); //结果为&#123; 0 : <span class="string">"a"</span>, 1 : <span class="string">"b"</span>, 2 : <span class="string">"c"</span>&#125;;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>方法四 map遍历</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arr= [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</span><br><span class="line">var obj = &#123;&#125;;</span><br><span class="line">arr.forEach((item,index)=&gt;&#123; obj[index] = item &#125;);</span><br><span class="line">console.log(obj); //结果为&#123; 0 : <span class="string">"a"</span>, 1 : <span class="string">"b"</span>, 2 : <span class="string">"c"</span>&#125;;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>方法五 for in遍历</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arr=[<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>];</span><br><span class="line">var obj=&#123;&#125;;</span><br><span class="line"><span class="keyword">for</span>(var key <span class="keyword">in</span> arr)&#123; obj[key] = arr[key] &#125;</span><br><span class="line">console.log(obj); //结果为&#123; 0 : <span class="string">"a"</span>, 1 : <span class="string">"b"</span>, 2 : <span class="string">"c"</span>&#125;;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>方法六 for循环</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arr=[<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>];</span><br><span class="line">var obj=&#123;&#125;;</span><br><span class="line"><span class="keyword">for</span>(var i=0; i&lt;arr.length;i++)&#123; obj[i] = arr[i] &#125;;</span><br><span class="line">console.log(obj); //结果为&#123; 0 : <span class="string">"a"</span>, 1 : <span class="string">"b"</span>, 2 : <span class="string">"c"</span>&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="return使用方式"><a href="#return使用方式" class="headerlink" title="return使用方式"></a>return使用方式</h2><h4 id="1-当箭头函数函数体只有一行的时候函数体的-和return都可以去掉"><a href="#1-当箭头函数函数体只有一行的时候函数体的-和return都可以去掉" class="headerlink" title="1.当箭头函数函数体只有一行的时候函数体的{}和return都可以去掉"></a>1.当箭头函数函数体只有一行的时候函数体的{}和return都可以去掉</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var arr=[<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>];</span><br><span class="line">arr.map((item,index)=&gt;item+1); //结果为[<span class="string">"a1"</span>, <span class="string">"b1"</span>, <span class="string">"c1"</span>];</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="2-当判断或函数调用条件成立并且不需在执行下面的流程可以用return"><a href="#2-当判断或函数调用条件成立并且不需在执行下面的流程可以用return" class="headerlink" title="2.当判断或函数调用条件成立并且不需在执行下面的流程可以用return"></a>2.当判断或函数调用条件成立并且不需在执行下面的流程可以用return</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arr= 1;</span><br><span class="line">var sum=[];</span><br><span class="line"><span class="keyword">if</span>(arr === 1)<span class="built_in">return</span> sum.push(1);</span><br><span class="line"><span class="keyword">if</span>(arr === 2)<span class="built_in">return</span> sum.push(2);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>另一种形式</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">sum</span></span>()&#123;</span><br><span class="line">	arr1；</span><br><span class="line">	<span class="built_in">return</span>；</span><br><span class="line">	arr2；</span><br><span class="line">&#125;</span><br><span class="line">//<span class="built_in">return</span>就是返回结果，你想返回结果就用<span class="built_in">return</span>，<span class="built_in">return</span>后面的语句不会在执行的，arr2就不会执行</span><br></pre></td></tr></table></figure>
+
+<h2 id="作者心里话"><a href="#作者心里话" class="headerlink" title="作者心里话"></a>作者心里话</h2><p>说实话其实小编(作者)还有很多地方不懂，大多数都是自己碰到了这种问题，或者想到这种问题，通过自己努力的理解和同事大神，以及度娘帮助来完成一系列的精简的概括，这篇博客也是为了防止小编(作者)再次遇到类似的问题，能够快速定位及解决问题，不再范迷糊，让自己模糊的记忆，一下清楚明了起来，还是那句话：“在前端的路上咱们一起加油吧！”</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/06/12/type_cast%20/" data-id="ckbc0o13d0000lk1i74szbecx" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-simplify_block" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/06/01/simplify_block/" class="article-date">
   <time datetime="2020-06-01T06:33:42.418Z" itemprop="datePublished">2020-06-01</time>
 </a>
     
@@ -78,7 +174,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/01/simplify-block/">简化判断及组织直线型代码</a>
+      <a class="article-title" href="/2020/06/01/simplify_block/">简化判断及组织直线型代码</a>
     </h1>
   
 
@@ -107,11 +203,12 @@
 </ul>
 <p><img src="/images/image-20200601160311525.png" alt=""></p>
 <p>如果代码组织良好，那么围绕各段的方框就不应该交叠，但有可能嵌套.</p>
-<h2 id="作者心里话"><a href="#作者心里话" class="headerlink" title="作者心里话"></a>作者心里话</h2><h4 id="努力把自己掌握的并尽可能的整理成能让读者一目了然知识干货分享出来给到大家-在前端的路上咱们一起加油吧！"><a href="#努力把自己掌握的并尽可能的整理成能让读者一目了然知识干货分享出来给到大家-在前端的路上咱们一起加油吧！" class="headerlink" title="努力把自己掌握的并尽可能的整理成能让读者一目了然知识干货分享出来给到大家,在前端的路上咱们一起加油吧！"></a>努力把自己掌握的并尽可能的整理成能让读者一目了然知识干货分享出来给到大家,在前端的路上咱们一起加油吧！</h4>
+<h2 id="作者心里话"><a href="#作者心里话" class="headerlink" title="作者心里话"></a>作者心里话</h2><p>努力把自己掌握的并尽可能的整理成能让读者一目了然知识干货分享出来给到大家,在前端的路上咱们一起加油吧！</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/06/01/simplify-block/" data-id="ckaw5goqz00009o1igaa034nj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/06/01/simplify_block/" data-id="ckbc0o13k0001lk1i2ocj7qgf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -121,9 +218,9 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-hello_world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/05/25/hello-world/" class="article-date">
+    <a href="/2020/05/25/hello_world/" class="article-date">
   <time datetime="2020-05-25T01:57:27.060Z" itemprop="datePublished">2020-05-25</time>
 </a>
     
@@ -135,7 +232,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/25/hello-world/">git及blog指令操作（概括）</a>
+      <a class="article-title" href="/2020/05/25/hello_world/">git及blog指令操作（概括）</a>
     </h1>
   
 
@@ -170,11 +267,12 @@
 
 <h3 id="2-上传博客文件"><a href="#2-上传博客文件" class="headerlink" title="2.上传博客文件"></a>2.上传博客文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
 <p>(1)可以简写成一句话 hexo g -d</p>
-<h2 id="作者心里话"><a href="#作者心里话" class="headerlink" title="作者心里话"></a>作者心里话</h2><h4 id="这是我第一次上传blog，对于一些指令操作说明没有特别细，还有很多不足的地方-详细的操作指令可通过对应的官方文档了解-，我只是把我遇到的常用的指令（归类概括一下）分享出来给到大家，还望多多理解，别忘了给我点赞哦，我会继续努力的争取分享出更多实用的方式方法给到大家，谢谢！"><a href="#这是我第一次上传blog，对于一些指令操作说明没有特别细，还有很多不足的地方-详细的操作指令可通过对应的官方文档了解-，我只是把我遇到的常用的指令（归类概括一下）分享出来给到大家，还望多多理解，别忘了给我点赞哦，我会继续努力的争取分享出更多实用的方式方法给到大家，谢谢！" class="headerlink" title="这是我第一次上传blog，对于一些指令操作说明没有特别细，还有很多不足的地方(详细的操作指令可通过对应的官方文档了解)，我只是把我遇到的常用的指令（归类概括一下）分享出来给到大家，还望多多理解，别忘了给我点赞哦，我会继续努力的争取分享出更多实用的方式方法给到大家，谢谢！"></a>这是我第一次上传blog，对于一些指令操作说明没有特别细，还有很多不足的地方(详细的操作指令可通过对应的官方文档了解)，我只是把我遇到的常用的指令（归类概括一下）分享出来给到大家，还望多多理解，别忘了给我点赞哦，我会继续努力的争取分享出更多实用的方式方法给到大家，谢谢！</h4>
+<h2 id="作者心里话"><a href="#作者心里话" class="headerlink" title="作者心里话"></a>作者心里话</h2><p>这是我第一次上传blog，对于一些指令操作说明没有特别细，还有很多不足的地方(详细的操作指令可通过对应的官方文档了解)，我只是把我遇到的常用的指令（归类概括一下）分享出来给到大家，还望多多理解，别忘了给我点赞哦，我会继续努力的争取分享出更多实用的方式方法给到大家，谢谢！</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/25/hello-world/" data-id="ckaw5gorx00019o1i1dvj7674" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/05/25/hello_world/" data-id="ckbc0o13s0002lk1icmd395at" class="article-share-link">Share</a>
       
       
     </footer>
@@ -215,11 +313,15 @@
       <ul>
         
           <li>
-            <a href="/2020/06/01/simplify-block/">简化判断及组织直线型代码</a>
+            <a href="/2020/06/12/type_cast%20/">type_cast </a>
           </li>
         
           <li>
-            <a href="/2020/05/25/hello-world/">git及blog指令操作（概括）</a>
+            <a href="/2020/06/01/simplify_block/">简化判断及组织直线型代码</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/25/hello_world/">git及blog指令操作（概括）</a>
           </li>
         
       </ul>
