@@ -64,9 +64,9 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-type_cast " class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-js_types_return" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/06/12/type_cast%20/" class="article-date">
+    <a href="/2020/06/12/js_types_return/" class="article-date">
   <time datetime="2020-06-12T08:30:51.469Z" itemprop="datePublished">2020-06-12</time>
 </a>
     
@@ -78,7 +78,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/12/type_cast%20/">type_cast </a>
+      <a class="article-title" href="/2020/06/12/js_types_return/">JS类型转换及return使用方法</a>
     </h1>
   
 
@@ -135,7 +135,7 @@
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arr=[<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>];</span><br><span class="line">var obj=&#123;&#125;;</span><br><span class="line"><span class="keyword">for</span>(var i=0; i&lt;arr.length;i++)&#123; obj[i] = arr[i] &#125;;</span><br><span class="line">console.log(obj); //结果为&#123; 0 : <span class="string">"a"</span>, 1 : <span class="string">"b"</span>, 2 : <span class="string">"c"</span>&#125;;</span><br></pre></td></tr></table></figure>
 
-<h2 id="return使用方式"><a href="#return使用方式" class="headerlink" title="return使用方式"></a>return使用方式</h2><h4 id="1-当箭头函数函数体只有一行的时候函数体的-和return都可以去掉"><a href="#1-当箭头函数函数体只有一行的时候函数体的-和return都可以去掉" class="headerlink" title="1.当箭头函数函数体只有一行的时候函数体的{}和return都可以去掉"></a>1.当箭头函数函数体只有一行的时候函数体的{}和return都可以去掉</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var arr=[<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>];</span><br><span class="line">arr.map((item,index)=&gt;item+1); //结果为[<span class="string">"a1"</span>, <span class="string">"b1"</span>, <span class="string">"c1"</span>];</span><br></pre></td></tr></table></figure>
+<h2 id="return使用方法"><a href="#return使用方法" class="headerlink" title="return使用方法"></a>return使用方法</h2><h4 id="1-当箭头函数函数体只有一行的时候函数体的-和return都可以去掉"><a href="#1-当箭头函数函数体只有一行的时候函数体的-和return都可以去掉" class="headerlink" title="1.当箭头函数函数体只有一行的时候函数体的{}和return都可以去掉"></a>1.当箭头函数函数体只有一行的时候函数体的{}和return都可以去掉</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var arr=[<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>];</span><br><span class="line">arr.map((item,index)=&gt;item+1); //结果为[<span class="string">"a1"</span>, <span class="string">"b1"</span>, <span class="string">"c1"</span>];</span><br></pre></td></tr></table></figure>
 
 
 <h4 id="2-当判断或函数调用条件成立并且不需在执行下面的流程可以用return"><a href="#2-当判断或函数调用条件成立并且不需在执行下面的流程可以用return" class="headerlink" title="2.当判断或函数调用条件成立并且不需在执行下面的流程可以用return"></a>2.当判断或函数调用条件成立并且不需在执行下面的流程可以用return</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arr= 1;</span><br><span class="line">var sum=[];</span><br><span class="line"><span class="keyword">if</span>(arr === 1)<span class="built_in">return</span> sum.push(1);</span><br><span class="line"><span class="keyword">if</span>(arr === 2)<span class="built_in">return</span> sum.push(2);</span><br></pre></td></tr></table></figure>
@@ -150,7 +150,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/06/12/type_cast%20/" data-id="ckbc0o13d0000lk1i74szbecx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/06/12/js_types_return/" data-id="ckbc192q30000n81ibbzjbkk9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -313,7 +313,7 @@
       <ul>
         
           <li>
-            <a href="/2020/06/12/type_cast%20/">type_cast </a>
+            <a href="/2020/06/12/js_types_return/">JS类型转换及return使用方法</a>
           </li>
         
           <li>
