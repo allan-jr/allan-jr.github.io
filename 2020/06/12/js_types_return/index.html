@@ -1,94 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 
-  
-  <title>JS类型转换及return使用方法 | 欢迎来到锦荣知识仓库</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JS类型转换1.数组转字符串 join()连接符123var arr &#x3D; [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;];arr.join(&quot;,&quot;);console.log(arr) &#x2F;&#x2F;结果为“a,b,c”  2.字符串转数组 split()切割符123var arr &#x3D; &quot;a,b,c&quot;;arr.split(&quot;,&quot;);console.log(arr) &#x2F;&#x2F;结果为[&quot;a&quot;,&quot;b&quot;,&quot;c&quot;];  3.数组转json12">
-<meta property="og:type" content="article">
-<meta property="og:title" content="JS类型转换及return使用方法">
-<meta property="og:url" content="http://yoursite.com/2020/06/12/js_types_return/index.html">
-<meta property="og:site_name" content="欢迎来到锦荣知识仓库">
-<meta property="og:description" content="JS类型转换1.数组转字符串 join()连接符123var arr &#x3D; [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;];arr.join(&quot;,&quot;);console.log(arr) &#x2F;&#x2F;结果为“a,b,c”  2.字符串转数组 split()切割符123var arr &#x3D; &quot;a,b,c&quot;;arr.split(&quot;,&quot;);console.log(arr) &#x2F;&#x2F;结果为[&quot;a&quot;,&quot;b&quot;,&quot;c&quot;];  3.数组转json12">
-<meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-06-12T08:30:51.469Z">
-<meta property="article:modified_time" content="2020-06-12T09:52:25.298Z">
-<meta property="article:author" content="Allan JR">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="欢迎来到锦荣知识仓库" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
+
+
+
+    <meta name="keywords" content=""/>
+
+
+
+    <meta name="description" content="
+JS类型转换1.数组转字符串 join()连接符123var arr = ["a","b","c"];arr.join(",");console.log(arr) //结果为“a,b,c”
+
+2.字符串转数组 split()切割符123var arr = "a,b,c";arr.split(..."/>
+
+
+<meta name="Robots" content="all">
+
+
+    <title>欢迎来到锦荣知识仓库 | JS类型转换及return使用方法</title>
+
+
+<link rel="icon" href="/images/favicon.ico">
+
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+
+<link rel="stylesheet" href="/css/atom-one-dark.css">
+
+
 <link rel="stylesheet" href="/css/style.css">
 
+
+<script src="/js/highlight.min.js"></script>
+
 <meta name="generator" content="Hexo 4.2.1"></head>
-
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">欢迎来到锦荣知识仓库</a>
-      </h1>
-      
+    <div class="main-container">
+        <header class="header">
+    <div class="global-width">
+        <nav class="nav-box">
+            
+                <a class="nav-item" href="/"
+                
+                >Home</a>
+            
+                <a class="nav-item" href="/resume"
+                
+                >Resume</a>
+            
+                <a class="nav-item" href="/mood"
+                
+                   target="_blank"
+                
+                >Mood</a>
+            
+                <a class="nav-item" href="/amusement/tetris"
+                
+                   target="_blank"
+                
+                >Amusement</a>
+            
+                <a class="nav-item" href="/about"
+                
+                >About</a>
+            
+        </nav>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
 </header>
-      <div class="outer">
-        <section id="main"><article id="post-js_types_return" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/06/12/js_types_return/" class="article-date">
-  <time datetime="2020-06-12T08:30:51.469Z" itemprop="datePublished">2020-06-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      JS类型转换及return使用方法
-    </h1>
-  
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="JS类型转换"><a href="#JS类型转换" class="headerlink" title="JS类型转换"></a>JS类型转换</h2><h4 id="1-数组转字符串-join-连接符"><a href="#1-数组转字符串-join-连接符" class="headerlink" title="1.数组转字符串 join()连接符"></a>1.数组转字符串 join()连接符</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>];</span><br><span class="line">arr.join(<span class="string">","</span>);</span><br><span class="line">console.log(arr) //结果为“a,b,c”</span><br></pre></td></tr></table></figure>
+        <section class="content global-width">
+            <div class="main">
+                <article class="box post">
+    <div class="post-title align-center detail-title">JS类型转换及return使用方法</div>
+    <div class="post-meta align-center">
+        
+        <i class="fa fa-calendar"></i> <time>2020-06-12</time>
+        <span class="dotted">|</span>
+        <i class="fa fa-user"></i> 
+        
+    </div>
+
+    <div class="post-content">
+        <a id="more"></a>
+<h2 id="JS类型转换"><a href="#JS类型转换" class="headerlink" title="JS类型转换"></a>JS类型转换</h2><h4 id="1-数组转字符串-join-连接符"><a href="#1-数组转字符串-join-连接符" class="headerlink" title="1.数组转字符串 join()连接符"></a>1.数组转字符串 join()连接符</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>];</span><br><span class="line">arr.join(<span class="string">","</span>);</span><br><span class="line">console.log(arr) //结果为“a,b,c”</span><br></pre></td></tr></table></figure>
 
 <h4 id="2-字符串转数组-split-切割符"><a href="#2-字符串转数组-split-切割符" class="headerlink" title="2.字符串转数组 split()切割符"></a>2.字符串转数组 split()切割符</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = <span class="string">"a,b,c"</span>;</span><br><span class="line">arr.split(<span class="string">","</span>);</span><br><span class="line">console.log(arr) //结果为[<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>];</span><br></pre></td></tr></table></figure>
 
@@ -149,113 +147,72 @@
 
 <h2 id="作者心里话"><a href="#作者心里话" class="headerlink" title="作者心里话"></a>作者心里话</h2><p>说实话其实小编(作者)还有很多地方不懂，大多数都是自己碰到了这种问题，或者想到这种问题，通过自己努力的理解和同事大神，以及度娘帮助来完成一系列的精简的概括，这篇博客也是为了防止小编(作者)再次遇到类似的问题，能够快速定位及解决问题，不再范迷糊，让自己模糊的记忆，一下清楚明了起来，还是那句话：“在前端的路上咱们一起加油吧！”</p>
 
-      
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/06/12/js_types_return/" data-id="ckbc14kt100017o1i1cv100ni" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-  
-    <a href="/2020/06/01/simplify_block/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">简化判断及组织直线型代码</div>
-    </a>
-  
-</nav>
-
-  
 </article>
-
-</section>
-        
-          <aside id="sidebar">
-  
+            </div>
+            <div class="aside">
     
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li></ul>
+        <div class="box widget">
+    <div class="introduction">
+        <p><img src="/images/avatar.jpg" alt="head-sculpture" /></p>
+        <p class="name">
+            博落回
+        </p>
+        <p class="slogan">流连矣 忘景幻云催 峦栈醺醺说旧梦 重山迟迟映霞辉 向晚共邀归 —— 忆江南</p>
     </div>
+</div>
+    
+        
+<div class="box widget">
+    <div class="title">Recent</div>
+    <ul class="item-box">
+        
+            
+                <li><a href="/2020/06/12/js_types_return/">JS类型转换及return使用方法</a></li>
+            
+        
+            
+                <li><a href="/2020/06/01/simplify_block/">简化判断及组织直线型代码</a></li>
+            
+        
+            
+                <li><a href="/2020/05/25/hello_world/">git及blog指令操作（概括）</a></li>
+            
+        
+    </ul>
+</div>
+
+    
+        
+    
+        
+  <div class="box widget">
+    <div class="title">Archives</div>
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">2020-06</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">2020-05</a><span class="archive-list-count">1</span></li></ul>
   </div>
 
-
-  
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
         
-          <li>
-            <a href="/2020/06/12/js_types_return/">JS类型转换及return使用方法</a>
-          </li>
-        
-          <li>
-            <a href="/2020/06/01/simplify_block/">简化判断及组织直线型代码</a>
-          </li>
-        
-          <li>
-            <a href="/2020/05/25/hello_world/">git及blog指令操作（概括）</a>
-          </li>
-        
-      </ul>
+    
+</div>
+        </section>
+        <footer class="footer">
+    <div class="global-width footer-box">
+        <div class="copyright">
+            <span>Copyright &copy; 2019</span>
+            <span class="dotted">|</span>
+            <span>Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a></span>
+            <span class="dotted">|</span>
+            <span>Theme by <a href="javascript:">Loren</a></span>
+            <span class="dotted">|</span>
+            <span><a href="http://www.beian.miit.gov.cn" target="_blank" rel="noopener">浙ICP备18016660号-1</a></span>
+        </div>
     </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2020 Allan JR<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
 </footer>
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-  </div>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
 </body>
 </html>
