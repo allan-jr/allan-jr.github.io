@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Loren - 俄罗斯方块</title>
+    <link rel="icon" href="images/favicon.ico" />
+    <link href="css/tetris.css" rel="stylesheet" type="text/css" />
+    <script src="js/tetris.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="game-panel">
+
+            <div id="game-explain" class="explain-panel">
+                <div class="title">操作说明</div>
+                <div class="explain-text">
+                    <p>旋转：ArrowUp</p>
+                    <p>向下：ArrowDown</p>
+                    <p>向左：ArrowLeft</p>
+                    <p>向右：ArrowRight</p>
+                    <p>速落：ControlRight</p>
+                    <p>阴影：Space</p>
+                    <p>暂停：Enter</p>
+                </div>
+            </div>
+
+            <div class="local-panel">
+                <div class="title">本地记录</div>
+                <ul id="local-record" class="record">
+                </ul>
+            </div>
+
+            <div class="map-panel">
+                <div class="block-panel">
+                    <div id="game-map" class="block-game"></div>
+                    <div id="game-shadow" class="shadow"></div>
+                </div>
+            </div>
+
+            <div id="game-pause" class="pause-panel">暂停</div>
+
+            <div id="game-button" class="button-panel">
+                <button id="button-start" class="active" type="button" onclick="startGame()">开始游戏</button>
+            </div>
+
+            <div id="game-next" class="next-panel">
+                <div id="next"></div>
+            </div>
+
+            <div id="game-level" class="level-panel">
+                <div class="title">等级</div>
+                <div id="current-level" class="level"></div>
+            </div>
+
+            <div id="game-achieve" class="achieve-panel">
+                <div class="current">
+                    <span class="name">分数</span>
+                    <span id="current-score" class="achieve"></span>
+                </div>
+                <div class="current">
+                    <span class="name">消行</span>
+                    <span id="current-line" class="achieve"></span>
+                </div>
+                <div class="next-level">
+                    <span>下一级</span>
+                    <label id="next-score-progress"></label>
+                </div>
+            </div>
+
+            <div id="game-autograph" class="autograph-panel">
+                <div class="personality">
+                    <img src="images/super.gif" alt="autograph">
+                    <span id="game-time" class="time">0</span><span class="unit">秒</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="game-over-panel" class="over-panel">
+        <div>你的成绩：<span id="user-score"></span><span> 分</span></div>
+        <div>消行数量：<span id="user-line"></span><span> 行</span></div>
+        <div>游戏耗时：<span id="user-time"></span><span> 秒</span></div>
+        <div>游戏等级：<span id="user-level"></span><span> 级</span></div>
+
+        <label for="score-input">保存成绩：</label>
+        <input id="score-input" type="text" placeholder="请输入你的姓名">
+        <label id="tips-text" class="input-tips"></label>
+
+        <div class="button-area">
+            <button id="save-score" class="active" type="button" onclick="saveScore()">保存成绩</button>
+            <button id="restart" class="active" type="button" onclick="startGame()">重新开始</button>
+        </div>
+    </div>
+    <div id="page-shadow" class="shadow-area"></div>
+
+    <script type="text/javascript">
+
+        var gameBoot = new GameBoot();
+
+        gameBoot.localRecord();
+
+        function startGame() {
+            gameBoot.gameStart();
+        }
+
+        function saveScore() {
+            gameBoot.saveGameScore();
+            gameBoot.localRecord();
+        }
+    </script>
+</body>
+
+</html>
