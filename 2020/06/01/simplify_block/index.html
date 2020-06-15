@@ -12,15 +12,14 @@
 
 
 
-    <meta name="description" content="
-简化判断的使用方法当后台传给我们的字段checkoutArray为0,1,2,3(3代表选择了1,2)可多选的时候(举例)相信你第一想到的方法就是用if…else…首先定义一个空数组checkoutArrays
-1234567891011let checkoutArrays = [];if(..."/>
+    <meta name="description" content="努力把自己掌握的并尽可能的整理成能让读者一目了然知识干货分享出来给到大家,在前端的路上咱们一起加油吧！
+简化判断的使用方法当后台传给我们的字段checkoutArray为0,1,2,3(3代表选择了1,2)可多选的时候(举例)相信你第一想到的方法就是用if…else…首先定义一个空数组chec..."/>
 
 
 <meta name="Robots" content="all">
 
 
-    <title>欢迎来到锦荣知识仓库 | 简化判断及组织直线型代码</title>
+    <title>欢迎来到锦荣知识殿堂 | 简化判断及组织直线型代码</title>
 
 
 <link rel="icon" href="/images/favicon.ico">
@@ -45,27 +44,27 @@
             
                 <a class="nav-item" href="/"
                 
-                >Home</a>
+                >首页</a>
             
                 <a class="nav-item" href="/resume"
                 
-                >Resume</a>
+                >简历</a>
             
                 <a class="nav-item" href="/mood"
                 
                    target="_blank"
                 
-                >Mood</a>
+                >心情</a>
             
                 <a class="nav-item" href="/amusement/tetris"
                 
                    target="_blank"
                 
-                >Amusement</a>
+                >娱乐</a>
             
                 <a class="nav-item" href="/about"
                 
-                >About</a>
+                >不榖</a>
             
         </nav>
     </div>
@@ -84,7 +83,7 @@
     </div>
 
     <div class="post-content">
-        <a id="more"></a>
+        <p>努力把自己掌握的并尽可能的整理成能让读者一目了然知识干货分享出来给到大家,在前端的路上咱们一起加油吧！<a id="more"></a></p>
 <h2 id="简化判断的使用方法"><a href="#简化判断的使用方法" class="headerlink" title="简化判断的使用方法"></a>简化判断的使用方法</h2><h4 id="当后台传给我们的字段checkoutArray为0-1-2-3-3代表选择了1-2-可多选的时候-举例"><a href="#当后台传给我们的字段checkoutArray为0-1-2-3-3代表选择了1-2-可多选的时候-举例" class="headerlink" title="当后台传给我们的字段checkoutArray为0,1,2,3(3代表选择了1,2)可多选的时候(举例)"></a>当后台传给我们的字段checkoutArray为0,1,2,3(3代表选择了1,2)可多选的时候(举例)</h4><h4 id="相信你第一想到的方法就是用if…else…"><a href="#相信你第一想到的方法就是用if…else…" class="headerlink" title="相信你第一想到的方法就是用if…else…"></a>相信你第一想到的方法就是用if…else…</h4><p>首先定义一个空数组checkoutArrays</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> checkoutArrays = [];</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(checkoutArray === 1)&#123;</span><br><span class="line">    checkoutArrays.push(1);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(checkoutArray === 2)&#123;</span><br><span class="line">    checkoutArrays.push(2);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(checkoutArray === 3)&#123;</span><br><span class="line">	checkoutArrays.push(1,2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这样写代码的虽然能实现效果，但比较啰嗦维护起来麻烦</p>
@@ -125,7 +124,7 @@
     
         
 <div class="box widget">
-    <div class="title">Recent</div>
+    <div class="title">最新</div>
     <ul class="item-box">
         
             
@@ -148,7 +147,7 @@
     
         
   <div class="box widget">
-    <div class="title">Archives</div>
+    <div class="title">归档</div>
     <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">2020-06</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">2020-05</a><span class="archive-list-count">1</span></li></ul>
   </div>
 

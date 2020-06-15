@@ -12,13 +12,13 @@
 
 
 
-    <meta name="description" content=""/>
+    <meta name="description" content="web前端"/>
 
 
 <meta name="Robots" content="all">
 
 
-    <title>欢迎来到锦荣知识仓库</title>
+    <title>欢迎来到锦荣知识殿堂</title>
 
 
 <link rel="icon" href="/images/favicon.ico">
@@ -43,27 +43,27 @@
             
                 <a class="nav-item" href="/"
                 
-                >Home</a>
+                >首页</a>
             
                 <a class="nav-item" href="/resume"
                 
-                >Resume</a>
+                >简历</a>
             
                 <a class="nav-item" href="/mood"
                 
                    target="_blank"
                 
-                >Mood</a>
+                >心情</a>
             
                 <a class="nav-item" href="/amusement/tetris"
                 
                    target="_blank"
                 
-                >Amusement</a>
+                >娱乐</a>
             
                 <a class="nav-item" href="/about"
                 
-                >About</a>
+                >不榖</a>
             
         </nav>
     </div>
@@ -86,36 +86,7 @@
                 <a href="/2020/05/25/hello_world/">
                     <p>
                         
-                            
-git指令操作1.创建一个新的项目目录，并生成一些简单的文件内容：第一步：新建项目文件夹test_proj1$ mkdir test_proj
-
-第二步：进入到本项目中1$ cd test_proj
-
-第三步：新建文本文档1$ echo "hello,world" &gt; readme.txt
-
-2.创建一个本地仓库1$ git init
-(2)有远程仓库的情况下先关联远程仓库git remote add origin http…. (远程仓库地址);
-(3)拉取远程仓库里的代码 git pull
-3.用命令把加入到git本地仓库的暂存区1$ git add .
-(1)其中.代表所有文件，也可设置单独想加入的文件名;
-4.提交到本地创库里1$ git commit -m  "第一次提交"
-(1)可多次commit，但不能多次push，commit可以合并成一个commit在push，push不行;
-(2)多次提交先合并commit记录 git rebase -i …    (…代表需要重哪里开始合并可以通过git log查看记录拿到提交编码);
-5.上传到远程仓库上1$ git push
-(1)首次git push可能不行但会有提示输什么指令，根据提示来，之后直接git push就行;
-6.查看当前状态1$ git status
-(1)如果步骤走过一遍可放在第一位,也可以随时输入git status查看当前状态;
-7. 正常的提交步骤：先拉取最新代码，再提交第一部分：切换到master，拉取master最新代码。切换到自己的分支，将master上的新代码合并进来，此时有冲突就解决冲突，然后提交，没冲突就直接提交123456$ git stash $ git checkout master$ git pull$ git checkout test_proj$ git merge master$ git stash pop
-(1)当你改的文件与其他人改的是同一文件在拉取代码时以防冲突可以通过git stash将你改动的地方暂存起来,在切换分支拉取代码,切回来后在通过git stash pop恢复暂存在进行提交操作;
-(2)拉取代码也可以直接用git pull origin master;
-第二部分：提交12345$ git add .$ git commit -m "第一次提交"$ git log $ git rebase -i $ git push
-(1)多次commit时,用git log打印日志获取到你想合并了commit编号，通过git rebase -i (commit编号) 来进行合并多条commit记录
-blog指令操作1.启动博客项目12$ hexo g$ hexo s
-
-2.上传博客文件12$ hexo g$ hexo d
-(1)可以简写成一句话 hexo g -d
-作者心里话这是我第一次上传blog，对于一些指令操作说明没有特别细，还有很多不足的地方(详细的操作指令可通过对应的官方文档了解)，我只是把我遇到的常用的指令（归类概括一下）分享出来给到大家，还望多多理解，别忘了给我点赞哦，我会继续努力的争取分享出更多实用的方式方法给到大家，谢谢！
-
+                            这是我第一次上传blog，对于一些指令操作说明没有特别细，还有很多不足的地方(详细的操作指令可通过对应的官方文档了解)，我只是把我遇到的常用的指令（归类概括一下）分享出来给到大家，还望多多理解，别忘了给我点赞哦，我会继续努力的争取分享出更多实用的方式方法给到大家，谢谢！
                         
                     </p>
                 </a>
@@ -142,7 +113,7 @@ blog指令操作1.启动博客项目12$ hexo g$ hexo s
     
         
 <div class="box widget">
-    <div class="title">Recent</div>
+    <div class="title">最新</div>
     <ul class="item-box">
         
             
@@ -165,7 +136,7 @@ blog指令操作1.启动博客项目12$ hexo g$ hexo s
     
         
   <div class="box widget">
-    <div class="title">Archives</div>
+    <div class="title">归档</div>
     <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">2020-06</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">2020-05</a><span class="archive-list-count">1</span></li></ul>
   </div>
 

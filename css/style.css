@@ -4,7 +4,7 @@ ul {
   padding: 0;
 }
 body {
-  font-size: 14px;
+  font-size: 16px;
   font-family: "Microsoft YaHei";
 }
 ul {
@@ -90,6 +90,18 @@ code {
 .hljs {
   padding: 15px;
   font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace, "Microsoft YaHei";
+}
+/*样式重构*/
+.highlight.bash {
+  background: #282c34;
+  color: #abb2bf;
+  line-height: 25px;
+}
+.highlight.bash .gutter {
+  border: none;
+}
+.highlight.bash .code {
+  border: none;
 }
 .header {
   height: 50px;
