@@ -48,58 +48,100 @@ JS类型转换1.数组转字符串 join()连接符123var arr = ["a","b","c"];arr
             
             <a class="nav-item" href="/" >简历</a>
             
-            <a class="nav-item" href="/mood"  target="_blank"
-                >心情</a>
+            <a class="nav-item" href="/mood" >心情</a>
             
-            <a class="nav-item" href="/amusement/tetris"  target="_blank"
-                >娱乐</a>
+            <a class="nav-item" href="/amusement/tetris" >娱乐</a>
             
-            <a class="nav-item" href="/about"  target="_blank"
-                >不榖</a>
+            <a class="nav-item" href="/about" >不榖</a>
             
         </nav>
     </div>
 </header>
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
         <section class="content global-width">
             <div class="main">
                 <article class="box post">
     <div class="post-title align-center detail-title">JS类型转换及return使用方法</div>
     <div class="post-meta align-center">
+        <span class="label">原创</span>
+        <span class="dotted">|</span>
         
         <i class="fa fa-calendar"></i> <time>2020-06-12</time>
         <span class="dotted">|</span>
         <i class="fa fa-user"></i> Allan
         
-            
-                <span class="dotted">|</span>
-                <i class="fa fa-folder-open-o"></i>
-                <a class="category-link" href="/categories/JS%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2-return%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">JS类型转换,return使用方法</a>
-
-                
-                    <span class="dotted">|</span>
-                
-
-            
-            
-                <i class="fa fa-tags"></i>
-                <a class="tag-link" href="/tags/JS%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" rel="tag">JS类型转换</a>, <a class="tag-link" href="/tags/return%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" rel="tag">return使用方法</a>
-            
         
+        <span class="dotted">|</span>
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/JS%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2-return%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">JS类型转换,return使用方法</a>
+
+        
+        <span class="dotted">|</span>
+        
+
+        
+        
+        <i class="fa fa-tags"></i>
+        <a class="tag-link" href="/tags/JS%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" rel="tag">JS类型转换</a>, <a class="tag-link" href="/tags/return%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" rel="tag">return使用方法</a>
+        
+        
+        <span class="dotted">|</span>
+        <span id="busuanzi_container_page_pv">
+            被浏览<span id="busuanzi_value_page_pv"></span>次
+        </span>
     </div>
 
     <div class="post-content">
         <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>本篇主要介绍JS的类型转换与return使用方法，列如: Array转Json、String转Array、Object转Array…<a id="more"></a></p>
-<h2 id="JS类型转换"><a href="#JS类型转换" class="headerlink" title="JS类型转换"></a>JS类型转换</h2><h4 id="1-数组转字符串-join-连接符"><a href="#1-数组转字符串-join-连接符" class="headerlink" title="1.数组转字符串 join()连接符"></a>1.数组转字符串 join()连接符</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>];</span><br><span class="line">arr.join(<span class="string">","</span>);</span><br><span class="line">console.log(arr) //结果为“a,b,c”</span><br></pre></td></tr></table></figure>
+<h2 id="JS类型转换"><a href="#JS类型转换" class="headerlink" title="JS类型转换"></a>JS类型转换</h2><h4 id="1-数组转字符串-join-连接符"><a href="#1-数组转字符串-join-连接符" class="headerlink" title="1.数组转字符串 join()连接符"></a>1.数组转字符串 join()连接符</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>];</span><br><span class="line">arr.join(<span class="string">","</span>);</span><br><span class="line">console.log(arr) //结果为<span class="string">"a,b,c"</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="2-字符串转数组-split-切割符"><a href="#2-字符串转数组-split-切割符" class="headerlink" title="2.字符串转数组 split()切割符"></a>2.字符串转数组 split()切割符</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = <span class="string">"a,b,c"</span>;</span><br><span class="line">arr.split(<span class="string">","</span>);</span><br><span class="line">console.log(arr) //结果为[<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>];</span><br></pre></td></tr></table></figure>
 
-<h4 id="3-数组转json"><a href="#3-数组转json" class="headerlink" title="3.数组转json"></a>3.数组转json</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1,2,3, &#123; a : 1 &#125; ];</span><br><span class="line">var sum=JSON.stringify( arr );</span><br><span class="line">console.log(sum); //结果为<span class="string">'[1,2,3,&#123;"a":1&#125;]'</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="3-数字转字符串"><a href="#3-数字转字符串" class="headerlink" title="3.数字转字符串"></a>3.数字转字符串</h4><p>var sum = 123456;</p>
+<ul>
+<li>方法一 toString()</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(sum.toString()); //结果为<span class="string">"123456"</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="4-json转数组"><a href="#4-json转数组" class="headerlink" title="4.json转数组"></a>4.json转数组</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var jsonStr = <span class="string">'[1,2,3,&#123;"a":1&#125;]'</span>;</span><br><span class="line">var sum = JSON.parse( jsonStr );</span><br><span class="line">console.log(sum); //结果为[1,2,3, &#123; a : 1 &#125; ];</span><br></pre></td></tr></table></figure>
+<ul>
+<li>方法二 数字+”” </li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(sum + <span class="string">""</span>); //结果为<span class="string">"123456"</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="5-对象转数组"><a href="#5-对象转数组" class="headerlink" title="5.对象转数组"></a>5.对象转数组</h4><ul>
+<h4 id="4-数组转数字数组"><a href="#4-数组转数字数组" class="headerlink" title="4.数组转数字数组"></a>4.数组转数字数组</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var sum = [<span class="string">"1"</span>,<span class="string">"2"</span>,<span class="string">"3"</span>].map(Number);</span><br><span class="line">console.log(sum) //结果为[1,2,3];</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-字符串转数字"><a href="#5-字符串转数字" class="headerlink" title="5.字符串转数字"></a>5.字符串转数字</h4><p>var sum = “123456”;</p>
+<ul>
+<li>方法一 字符前”+”</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(+sum) //结果为123456;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>方法二 *=1</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s *= 1; //结果为123456;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>方法三 parseInt()</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parseInt(sum); //结果为123456;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>方法四 parseFloat()</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parseFloat(sum); //结果为123456;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>方法五 强制类型转换Number()</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Number(sum); //结果为123456;</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-数组转json"><a href="#6-数组转json" class="headerlink" title="6.数组转json"></a>6.数组转json</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1,2,3, &#123; a : 1 &#125; ];</span><br><span class="line">var sum=JSON.stringify( arr );</span><br><span class="line">console.log(sum); //结果为<span class="string">'[1,2,3,&#123;"a":1&#125;]'</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-json转数组"><a href="#7-json转数组" class="headerlink" title="7.json转数组"></a>7.json转数组</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var jsonStr = <span class="string">'[1,2,3,&#123;"a":1&#125;]'</span>;</span><br><span class="line">var sum = JSON.parse( jsonStr );</span><br><span class="line">console.log(sum); //结果为[1,2,3, &#123; a : 1 &#125; ];</span><br></pre></td></tr></table></figure>
+
+<h4 id="8-对象转数组"><a href="#8-对象转数组" class="headerlink" title="8.对象转数组"></a>8.对象转数组</h4><ul>
 <li>方法一 Object.values()</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123; <span class="string">'0'</span> : <span class="string">"a"</span>, <span class="string">'1'</span> : <span class="string">"b"</span>, <span class="string">'2'</span> : <span class="string">"c"</span>&#125;;</span><br><span class="line">var arr = Object.values(obj);</span><br><span class="line">console.log(arr); //结果为[ <span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>];</span><br></pre></td></tr></table></figure>
@@ -110,7 +152,7 @@ JS类型转换1.数组转字符串 join()连接符123var arr = ["a","b","c"];arr
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123; <span class="string">'0'</span> : <span class="string">"a"</span>, <span class="string">'1'</span> : <span class="string">"b"</span>, <span class="string">'2'</span> : <span class="string">"c"</span>&#125;;</span><br><span class="line">var arr = [];</span><br><span class="line"><span class="keyword">for</span>(var i <span class="keyword">in</span> obj)&#123; arr.push(obj[i])&#125;;</span><br><span class="line">console.log(arr); //结果为[ <span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>];</span><br></pre></td></tr></table></figure>
 
 
-<h4 id="6-数组转对象，键值对形式"><a href="#6-数组转对象，键值对形式" class="headerlink" title="6.数组转对象，键值对形式"></a>6.数组转对象，键值对形式</h4><ul>
+<h4 id="9-数组转对象，键值对形式"><a href="#9-数组转对象，键值对形式" class="headerlink" title="9.数组转对象，键值对形式"></a>9.数组转对象，键值对形式</h4><ul>
 <li>方法一  Object.assign()</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object.assign(&#123;&#125;,[1,2,3]); //结果为&#123; 0 : 1, 1 : 2, 2 : 3 &#125;;</span><br></pre></td></tr></table></figure>
@@ -118,7 +160,7 @@ JS类型转换1.数组转字符串 join()连接符123var arr = ["a","b","c"];arr
 <ul>
 <li>方法二 ES6的语法糖 {…}</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;...[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>]&#125;</span><br><span class="line">console.log(&#123;...[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>]&#125;); //结果为&#123; 0 : <span class="string">"a"</span>, 1 : <span class="string">"b"</span>, 2 : <span class="string">"c"</span>&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;...[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>]&#125;;</span><br><span class="line">console.log(&#123;...[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>]&#125;); //结果为&#123; 0 : <span class="string">"a"</span>, 1 : <span class="string">"b"</span>, 2 : <span class="string">"c"</span>&#125;;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>方法三 forEach循环</li>
@@ -133,7 +175,7 @@ JS类型转换1.数组转字符串 join()连接符123var arr = ["a","b","c"];arr
 <ul>
 <li>方法五 for in遍历</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arr=[<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>];</span><br><span class="line">var obj=&#123;&#125;;</span><br><span class="line"><span class="keyword">for</span>(var key <span class="keyword">in</span> arr)&#123; obj[key] = arr[key] &#125;</span><br><span class="line">console.log(obj); //结果为&#123; 0 : <span class="string">"a"</span>, 1 : <span class="string">"b"</span>, 2 : <span class="string">"c"</span>&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arr=[<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>];</span><br><span class="line">var obj=&#123;&#125;;</span><br><span class="line"><span class="keyword">for</span>(var key <span class="keyword">in</span> arr)&#123; obj[key] = arr[key] &#125;;</span><br><span class="line">console.log(obj); //结果为&#123; 0 : <span class="string">"a"</span>, 1 : <span class="string">"b"</span>, 2 : <span class="string">"c"</span>&#125;;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>方法六 for循环</li>
@@ -148,7 +190,7 @@ JS类型转换1.数组转字符串 join()连接符123var arr = ["a","b","c"];arr
 <ul>
 <li>另一种形式</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">sum</span></span>()&#123;</span><br><span class="line">	arr1；</span><br><span class="line">	<span class="built_in">return</span>；</span><br><span class="line">	arr2；</span><br><span class="line">&#125;</span><br><span class="line">//<span class="built_in">return</span>就是返回结果，你想返回结果就用<span class="built_in">return</span>，<span class="built_in">return</span>后面的语句不会在执行的，arr2就不会执行</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">sum</span></span>()&#123;</span><br><span class="line">	arr1;</span><br><span class="line">	<span class="built_in">return</span>;</span><br><span class="line">	arr2;</span><br><span class="line">&#125;</span><br><span class="line">//<span class="built_in">return</span>就是返回结果，你想返回结果就用<span class="built_in">return</span>，<span class="built_in">return</span>后面的语句不会在执行的，arr2就不会执行</span><br></pre></td></tr></table></figure>
 
 <h2 id="作者心里话"><a href="#作者心里话" class="headerlink" title="作者心里话"></a>作者心里话</h2><p>说实话其实小编(作者)还有很多地方不懂，大多数都是自己碰到了这种问题，或者想到这种问题，通过自己努力的理解和同事大神，以及度娘帮助来完成一系列的精简的概括，这篇博客也是为了防止小编(作者)再次遇到类似的问题，能够快速定位及解决问题，不再范迷糊，让自己模糊的记忆，一下清楚明了起来，还是那句话：“在前端的路上咱们一起加油吧！”</p>
 
