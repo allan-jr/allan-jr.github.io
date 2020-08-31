@@ -6,6 +6,8 @@ ul {
 body {
   font-size: 16px;
   font-family: "Microsoft YaHei";
+  color: #ddd;
+  background: url("../images/banner.jpg");
 }
 ul {
   list-style-type: none;
@@ -16,7 +18,7 @@ ul {
 }
 a {
   text-decoration: none;
-  color: #333;
+  color: #ddd;
 }
 a:hover {
   color: #ff1227;
@@ -94,6 +96,7 @@ code {
 /*样式重构*/
 .highlight.bash {
   background: #282c34;
+  opacity: 0.7;
   color: #abb2bf;
   line-height: 25px;
 }
@@ -166,7 +169,7 @@ code {
   font-weight: 700;
 }
 .post .post-title a {
-  color: #484850;
+  color: #fff;
 }
 .post .post-title a:hover {
   color: #ff1227;
@@ -179,7 +182,7 @@ code {
   word-break: break-all;
 }
 .post .post-excerpt a {
-  color: #333;
+  color: #ddd;
 }
 .post .post-excerpt a p {
   margin: 0;
@@ -210,7 +213,7 @@ code {
 .post .post-footer {
   margin-top: 15px;
   padding-top: 15px;
-  border-top: 1px dotted #d8d8d8;
+  border-top: 1px dashed #d8d8d8;
 }
 .post .align-center {
   text-align: center;
