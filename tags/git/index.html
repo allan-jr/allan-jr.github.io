@@ -61,72 +61,6 @@
                 
 
 <article class="box post post-item">
-    <div class="post-title"><a href="/2020/09/24/antdv_elementUI/">antdv与element UI组件与API的区别（部分）</a></div>
-    <div class="post-meta">
-        
-        <i class="fa fa-calendar"></i> <time>2020-09-24</time>
-        <span class="dotted">|</span>
-        <i class="fa fa-user"></i> Allan
-    </div>
-
-    <div class="post-excerpt">
-        <a href="/2020/09/24/antdv_elementUI/">
-            <p>
-                
-                摘要本篇主要讲解antdv与element UI组件与API的区别（部分）
-分页1.element 与 ant UI(表格)12345&lt;el-table :data="xxxData"&gt;  &lt;el-table-column label="xxx" width="300" show-overflow-tooltip &gt;      &lt;template slot-scope="scope"&gt;&#123;&#123; scope.row.xxx | FtaskStatus&#125;&#125;&lt;/template&gt;    &lt;/el-table-column&gt;&lt;/el-table&gt;
-
-12345&lt;a-table :data-source="xxxData" :pagination="false"&gt;  &lt;a-table-column title="xxx" width="300px" show-overflow-tooltip &gt;    &lt;template slot-scope="text, record"&gt;&#123;&#123; record.xxx | FtaskStatus&#125;&#125;&lt;/template&gt;  &lt;/a-table-column&gt;&lt;/a-table&gt;
-
-elementUI 组件基本都以 el-xxx 开头而 antUI 基本都以 a-xxx 开头，table 中 element 绑定数据的 api 是:data,而 ant 是:data-source。
-el-table-column 中以 label 为表头名称，a-table-column 以 title 作为表头名称,api width 区别 ant 中使用必须附带计算单位否则无效。
-template 在 elementUI 还是 ant 中都为 template，区别在于 api slot-cope 当在 element 中使用是=”scope”,并以来代表这一行对应表头的内容而 ant 中使用是=”text,record”,并以来代表这一行对应表头的内容。
-还有最后一点要提 ant 中 Table 组件是自带分页属性的可使用:pagination=”false”设置去掉默认分页
-2.element 与 ant UI(分页)12&lt;el-pagination :current-page="currentPage" @current-change="curChange" @size-change="sizeChange":page-sizes="[25,50,75, 100]" :page-size="pageSize" :total="total"/&gt;
-
-123&lt;a-pagination :current="currentPage" @change="curChange" @showSizeChange="sizeChange":pageSizeOptions="['10', '20', '30', '40']" :pageSize.sync="pageSize":total="total" :showSizeChanger="true" :showQuickJumper="true"&gt;
-
-上述其实已经可以看到 api 有这很明确的不同点了，小编就不多解释了。
-这里主要提两点，第一要提的是 ant 分页与 element 分页展示多少条/页，与跳转至某一页的区别,ant 必须要通过 api 设置:showSizeChanger=”true” :showQuickJumper=”true”才会在界面上展示出来，而 elementUI 自带默认展示。
-第二要提的点是两者方法的回调参数
-12sizeChange(val) &#123; this.pageSize = val;&#125;,  // 页容量变化curChange(val) &#123; this.currentPage = val;&#125; // 当前页变化
-
-12345678sizeChange(size,current) &#123;  this.pageSize = size;  this.currentPage = current;&#125;,curChange(page, pageSize) &#123;  this.currentPage = page;  this.pageSize = pageSize;&#125;
-
-3.element 与 ant UI(下拉框)12345&lt;el-select v-model="xxx" placeholder="xxx"&gt;  &lt;el-option v-for="(item, index) in xxx"      :key="index" :label="item.xxx"  :value="item.xxx"&gt;  &lt;/el-option&gt;&lt;/el-select&gt;
-
-123456&lt;a-select v-model="xxx" placeholder="xxx"&gt;  &lt;a-select-option v-for="(item, index) in xxx"    :key="index" :label="item.xxx" :value="item.xxx"&gt;    &#123;&#123; item.xxx &#125;&#125;  &lt;/a-select-option&gt;&lt;/a-select&gt;
-
-看的见的区别小编就不多啰嗦了，这里区别主要讲要一点placeholder(占位符)，当两种UI组件都绑定了默认值且为空的情况下，ant中placeholder(占位符)会失效，解决方法取消绑定默认值可以通过@change方法来设置绑定值，如果默认值不为空的建议直接绑定使用就好。
-作者心里话有幸接到一个elementUI+Vue的项目需要迁移几个页面到新项目的任务，该项目使用antdvUI+Vue,原本以为挺简单的直接拿过来用就好了，结果发现还是有很多不同点，很多东西拿到新项目中都失效了。然后仔仔细细的看了一下elementUI与antUI的组件与API调用，发现这里学问还挺大的，以防以后在遇到类似的迁移，先提前简单明了的把大致所要用到的组件及API标指出来，方便以后回顾！
-
-                
-            </p>
-        </a>
-    </div>
-
-    
-    <div class="post-footer">
-        
-        <i class="fa fa-folder-open-o"></i>
-        <a class="category-link" href="/categories/git-blog/">git,blog</a>
-
-        
-        <span class="dotted">|</span>
-        
-
-        
-        
-        <i class="fa fa-tags"></i>
-        <a class="tag-link" href="/tags/blog/" rel="tag">blog</a>, <a class="tag-link" href="/tags/git/" rel="tag">git</a>
-        
-    </div>
-    
-</article>
-
-
-
-<article class="box post post-item">
     <div class="post-title"><a href="/2020/05/25/hello_world/">git及blog指令操作（概括）</a></div>
     <div class="post-meta">
         
@@ -186,7 +120,7 @@ template 在 elementUI 还是 ant 中都为 template，区别在于 api slot-cop
     <ul class="item-box">
         
             
-                <li><a href="/2020/09/24/antdv_elementUI/">antdv与element UI组件与API的区别（部分）</a></li>
+                <li><a href="/2020/09/24/antdv_elementUI/">antdv与element UI组件与API的区别</a></li>
             
         
             
@@ -208,7 +142,7 @@ template 在 elementUI 还是 ant 中都为 template，区别在于 api slot-cop
         
     <div class="box widget">
         <div class="title">分类</div>
-        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JS%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2-return%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">JS类型转换,return使用方法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git-blog/">git,blog</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%80%E5%8C%96%E5%88%A4%E6%96%AD-%E7%BB%84%E7%BB%87%E7%9B%B4%E7%BA%BF%E5%9E%8B%E4%BB%A3%E7%A0%81/">简化判断,组织直线型代码</a><span class="category-list-count">1</span></li></ul>
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JS%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2-return%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">JS类型转换,return使用方法</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/antdv-element/">antdv,element</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git-blog/">git,blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AE%80%E5%8C%96%E5%88%A4%E6%96%AD-%E7%BB%84%E7%BB%87%E7%9B%B4%E7%BA%BF%E5%9E%8B%E4%BB%A3%E7%A0%81/">简化判断,组织直线型代码</a><span class="category-list-count">1</span></li></ul>
     </div>
 
     
@@ -223,7 +157,7 @@ template 在 elementUI 还是 ant 中都为 template，区别在于 api slot-cop
     <div class="box widget">
         <div class="title">标签</div>
         <div class="item-box cloud-label">
-            <a href="/tags/JS%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" style="font-size: 10px;">JS类型转换</a> <a href="/tags/blog/" style="font-size: 20px;">blog</a> <a href="/tags/git/" style="font-size: 20px;">git</a> <a href="/tags/return%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" style="font-size: 10px;">return使用方法</a> <a href="/tags/%E7%AE%80%E5%8C%96%E5%88%A4%E6%96%AD/" style="font-size: 10px;">简化判断</a> <a href="/tags/%E7%BB%84%E7%BB%87%E7%9B%B4%E7%BA%BF%E5%9E%8B%E4%BB%A3%E7%A0%81/" style="font-size: 10px;">组织直线型代码</a>
+            <a href="/tags/JS%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" style="font-size: 10px;">JS类型转换</a> <a href="/tags/antdv/" style="font-size: 10px;">antdv</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/element/" style="font-size: 10px;">element</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/return%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" style="font-size: 10px;">return使用方法</a> <a href="/tags/%E7%AE%80%E5%8C%96%E5%88%A4%E6%96%AD/" style="font-size: 10px;">简化判断</a> <a href="/tags/%E7%BB%84%E7%BB%87%E7%9B%B4%E7%BA%BF%E5%9E%8B%E4%BB%A3%E7%A0%81/" style="font-size: 10px;">组织直线型代码</a>
         </div>
     </div>
 
